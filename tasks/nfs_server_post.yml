@@ -3,4 +3,5 @@
   template:
     src: exports.j2
     dest: /etc/exports
+  when: nfs_server_client_ips is defined
   notify: Restart NFS Server

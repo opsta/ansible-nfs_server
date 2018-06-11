@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Opsta
-  description: Ansible role to install and config NFS Server for Kubernetes
+  description: Ansible role to install and config NFS Server
   company: "Opsta (Thailand) Co.,Ltd."
   license: "MIT"
   min_ansible_version: 2.4

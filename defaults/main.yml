@@ -1,5 +1,7 @@
 ---
-nfs_server_mount_path: /
-nfs_server_kubernetes_ips:
-  - 10.10.10.1
-  - 10.10.10.2
+nfs_server_mount_path: /nfs
+
+# For group_vars
+# nfs_server_client_ips:
+#   - 10.10.10.1
+#   - 10.10.10.2

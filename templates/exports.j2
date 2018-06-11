@@ -1,1 +1,1 @@
-{{ nfs_server_mount_path }} {%- for host in nfs_server_kubernetes_ips -%}{{ host }}(rw,no_root_squash,crossmnt,no_subtree_check,sync,fsid=0)) {%- endfor -%}
+{{ nfs_server_mount_path }} {%- for host in nfs_server_client_ips -%}{{ host }}(rw,no_root_squash,crossmnt,no_subtree_check,sync,fsid=0)) {%- endfor -%}
