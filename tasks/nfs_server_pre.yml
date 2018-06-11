@@ -1,7 +1,7 @@
 ---
 - name: Check mount directory
   file:
-    path: {{ nfs_server_mount_path }}
+    path: "{{ nfs_server_mount_path }}"
     state: directory
     mode: 777
     owner: root

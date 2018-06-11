@@ -1,7 +1,7 @@
 ---
 - name: Ensure NFS Utilities are installed
   apt:
-    name: {{ item }}
+    name: "{{ item }}"
     state: present
     update_cache: yes
   with_items:
