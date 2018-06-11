@@ -1,0 +1,8 @@
+---
+- include_tasks: nfs_server_pre.yml
+- include_tasks: nfs_server_install.yml
+
+- block: # Config NFS Server
+  - include_tasks: nfs_server_post.yml
+  tags:
+    - nfs-server-config

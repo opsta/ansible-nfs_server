@@ -1,0 +1,5 @@
+---
+nfs_server_mount_path: /
+nfs_server_kubernetes_ips:
+  - 10.10.10.1
+  - 10.10.10.2
