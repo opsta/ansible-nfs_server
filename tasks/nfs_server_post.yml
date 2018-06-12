@@ -5,3 +5,11 @@
     dest: /etc/exports
   when: nfs_server_client_ips is defined
   notify: Restart NFS Server
+
+- name: Configure rpcmount port
+  lineinfile:
+    dest: /run/sysconfig/nfs-utils
+    regexp: '^(.*)RPCMOUNTDARGS(.*)$'
+    line: 'RPCMOUNTDARGS="-p {{ nfs_server_rpcmount_port }}"'
+  when: nfs_server_rpcmount_port is defined
+  notify: Restart NFS Server
