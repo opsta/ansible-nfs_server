@@ -18,7 +18,7 @@ None.
 
     - hosts: all
       roles:
-        - ansible-nfs-server
+        - opsta.nfs_server
 
 ## License
 
