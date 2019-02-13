@@ -3,6 +3,6 @@
   file:
     path: "{{ nfs_server_mount_path }}"
     state: directory
-    mode: 777
+    mode: 0777
     owner: root
     group: root
