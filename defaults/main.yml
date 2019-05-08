@@ -1,4 +1,8 @@
 ---
+nfs_apt_packages:
+  - nfs-common
+  - nfs-kernel-server
+
 nfs_server_mount_path: /nfs
 
 # For group_vars
