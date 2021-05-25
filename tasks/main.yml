@@ -1,8 +1,13 @@
 ---
-- include_tasks: nfs_server_pre.yml
-- include_tasks: nfs_server_install.yml
+- name: Gather variables for each operating system
+  ansible.builtin.include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_os_family }}.yml"
 
-- block: # Config NFS Server
-  - include_tasks: nfs_server_post.yml
+- ansible.builtin.include_tasks: nfs_server_pre.yml
+- ansible.builtin.include_tasks: nfs_server_install.yml
+
+- block:  # Config NFS Server
+  - ansible.builtin.include_tasks: nfs_server_post.yml
   tags:
     - nfs-server-config

@@ -1,8 +1,9 @@
 ---
 - name: Check mount directory
-  file:
-    path: "{{ nfs_server_mount_path }}"
+  ansible.builtin.file:
+    path: "{{ item.path }}"
     state: directory
     mode: 0777
     owner: root
     group: root
+  with_items: "{{ nfs_export_config }}"

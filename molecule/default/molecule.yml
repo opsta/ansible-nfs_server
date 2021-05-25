@@ -1,0 +1,36 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+  provider:
+    # Can be any supported provider (VBox, Parallels, libvirt, etc)
+    name: VBox
+lint: |
+    set -e
+    yamllint .
+    ansible-lint ../../tasks
+
+platforms:
+  - name: ubuntu2004
+    box: geerlingguy/ubuntu2004
+    memory: 1024
+    cpus: 1
+
+  - name: centos7
+    box: geerlingguy/centos7
+    memory: 1024
+    cpus: 1
+
+  - name: centos8
+    box: geerlingguy/centos8
+    memory: 1024
+    cpus: 1
+
+provisioner:
+  name: ansible
+  log: true
+scenario:
+  name: default
+verifier:
+  name: testinfra
