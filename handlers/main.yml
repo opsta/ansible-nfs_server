@@ -3,3 +3,4 @@
   ansible.builtin.systemd:
     name: nfs-server
     state: restarted
+    enabled: true

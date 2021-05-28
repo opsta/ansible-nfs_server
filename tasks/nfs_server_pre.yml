@@ -6,4 +6,4 @@
     mode: 0777
     owner: root
     group: root
-  with_items: "{{ nfs_export_config }}"
+  with_items: "{{ nfs_exportfs_configs }}"

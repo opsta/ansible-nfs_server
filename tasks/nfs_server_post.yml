@@ -3,7 +3,7 @@
   ansible.builtin.template:
     src: exports.j2
     dest: /etc/exports
-  when: nfs_export_config is defined
+  when: nfs_exportfs_configs is defined
   notify: Restart NFS Server
 
 - name: Configure rpcmount port

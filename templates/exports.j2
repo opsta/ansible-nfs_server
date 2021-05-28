@@ -1,1 +1,1 @@
-{% for host in nfs_export_config -%}{{ host.path }} {{ host.client_ip }}{{ host.mount_options }}{% endfor -%}
+{% for host in nfs_exportfs_configs -%}{{ host.path }} {{ host.client_ip }}{{ host.mount_options }}{% endfor -%}
