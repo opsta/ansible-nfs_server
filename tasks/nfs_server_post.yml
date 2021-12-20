@@ -1,15 +1,15 @@
 ---
 - name: Copy /etc/exports
-  template:
+  ansible.builtin.template:
     src: exports.j2
     dest: /etc/exports
-  when: nfs_server_client_ips is defined
+  when: nfs_exportfs_configs is defined
   notify: Restart NFS Server
 
 - name: Configure rpcmount port
-  lineinfile:
+  ansible.builtin.lineinfile:
     dest: /run/sysconfig/nfs-utils
-    regexp: '^(.*)RPCMOUNTDARGS(.*)$'
+    regexp: "^(.*)RPCMOUNTDARGS(.*)$"
     line: 'RPCMOUNTDARGS="-p {{ nfs_server_rpcmount_port }}"'
   when: nfs_server_rpcmount_port is defined
   notify: Restart NFS Server

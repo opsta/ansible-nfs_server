@@ -1,12 +1,10 @@
 ---
-nfs_apt_packages:
-  - nfs-common
-  - nfs-kernel-server
-
-nfs_server_mount_path: /nfs
-
-# For group_vars
-# nfs_server_client_ips:
-#   - 10.10.10.1
-#   - 10.10.10.2
 # nfs_server_rpcmount_port: 33333
+# nfs_exportfs_configs: []
+# nfs_exportfs_configs:
+#   - client_ip: ip
+#     path: /nfs
+#     mount_options: "(rw)"
+#   - client_ip: ip
+#     path: /nfs2
+#     mount_options: "(rw,sync,no_subtree_check)"

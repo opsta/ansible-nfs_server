@@ -1,6 +1,15 @@
 ---
+#   Note : test RedHat must use redhat subscription to install nfs server
+# - name: use redhat subscription
+#   community.general.redhat_subscription:
+#     state: present
+#     username: username
+#     password: password
+#     auto_attach: true
+#   when: ansible_distribution == 'RedHat'
+
 - name: Ensure NFS Utilities are installed
-  apt:
-    name: "{{ nfs_apt_packages }}"
+  ansible.builtin.package:
+    name: "{{ nfs_packages }}"
     state: present
-    update_cache: yes
+    update_cache: true
